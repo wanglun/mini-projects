@@ -36,6 +36,16 @@ class blocking_queue {
     cv_.notify_one();
   }
 
+  void push(type&& v) {
+    std::unique_lock<std::mutex> lk(cv_m_);
+    while (queue_.size() >= size_) {
+      cv_.wait(lk);
+    }
+    queue_.push(std::move(v));
+
+    cv_.notify_one();
+  }
+
  private:
   blocking_queue(const blocking_queue&) = delete;
   blocking_queue& operator=(const blocking_queue&) = delete;
