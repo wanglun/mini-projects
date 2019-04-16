@@ -13,6 +13,7 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/minilib/
 if (BUILD_UNIT_TESTS)
     set(MINILIB_TEST_SRCS
         ${PROJECT_SOURCE_DIR}/src/minilib/blocking_queue_test.cpp
+        ${PROJECT_SOURCE_DIR}/src/minilib/priority_queue_test.cpp
         )
 
     find_path(GTEST_INCLUDE_PATH gtest/gtest.h)
@@ -23,6 +24,7 @@ if (BUILD_UNIT_TESTS)
     endif()
     include_directories(${GTEST_INCLUDE_PATH})
 
+    set(CMAKE_CXX_FLAGS "${CMAKE_CPP_FLAGS} -Dprivate=public")
     add_executable(test_minilib ${MINILIB_TEST_SRCS})
     target_link_libraries(test_minilib
         minilib
