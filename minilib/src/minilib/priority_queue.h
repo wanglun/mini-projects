@@ -1,5 +1,6 @@
 #include <vector>
 
+// TODO: support comparator
 template <typename T>
 class priority_queue {
  public:
@@ -14,7 +15,6 @@ class priority_queue {
   size_t empty() const { return arr_.empty(); }
 
  private:
-  void heapify();
   void sift_down(size_t root);
   void sift_up(size_t root);
 
@@ -51,9 +51,6 @@ void priority_queue<T>::pop() {
     sift_down(0);
   }
 }
-
-template <typename T>
-void priority_queue<T>::heapify() {}
 
 template <typename T>
 void priority_queue<T>::sift_down(size_t root) {
