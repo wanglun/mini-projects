@@ -14,7 +14,7 @@ std::ostream& operator<<(std::ostream& os, const std::vector<int>& v) {
   return os;
 }
 
-TEST(priority_queue, basic) {
+TEST(priority_queue, max_heap) {
   priority_queue<int> h;
   std::vector<int> seq{3, 4, 1, 1, 10, 6};
   std::vector<int> h_built{10, 4, 6, 1, 3, 1};
@@ -26,6 +26,26 @@ TEST(priority_queue, basic) {
   ASSERT_EQ(h_built, h.arr_);
 
   std::sort(seq.begin(), seq.end(), [](int i, int j) { return i > j; });
+  size_t i = 0;
+  for (; !h.empty(); ++i) {
+    ASSERT_EQ(seq[i], h.top());
+    h.pop();
+  }
+  ASSERT_EQ(seq.size(), i);
+}
+
+TEST(priority_queue, min_heap) {
+  priority_queue<int, std::greater<int>> h;
+  std::vector<int> seq{3, 4, 1, 1, 10, 6};
+  std::vector<int> h_built{1, 1, 3, 4, 10, 6};
+  for (int v : seq) {
+    h.push(v);
+  }
+  ASSERT_EQ(seq.size(), h.size());
+  ASSERT_FALSE(h.empty());
+  ASSERT_EQ(h_built, h.arr_);
+
+  std::sort(seq.begin(), seq.end());
   size_t i = 0;
   for (; !h.empty(); ++i) {
     ASSERT_EQ(seq[i], h.top());

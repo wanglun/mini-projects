@@ -1,3 +1,6 @@
+#ifndef MINILIB_BLOCKING_QUEUE_H
+#define MINILIB_BLOCKING_QUEUE_H
+
 #include <condition_variable>
 #include <mutex>
 #include <queue>
@@ -57,3 +60,5 @@ class blocking_queue {
 };
 
 }  // namespace minilib
+
+#endif  // MINILIB_BLOCKING_QUEUE_H
