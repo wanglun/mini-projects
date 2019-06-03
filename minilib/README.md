@@ -5,6 +5,7 @@
 * [x] priority_queue
 * [] hash_map
 * [] lru
+* [x] semaphore
 
 ## Algorithms
 * search
