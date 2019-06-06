@@ -16,6 +16,7 @@ if (BUILD_UNIT_TESTS)
         ${PROJECT_SOURCE_DIR}/src/minilib/priority_queue_test.cpp
         ${PROJECT_SOURCE_DIR}/src/minilib/cstring_test.cpp
         ${PROJECT_SOURCE_DIR}/src/minilib/semaphore_test.cpp
+        ${PROJECT_SOURCE_DIR}/src/minilib/sort_test.cpp
         )
 
     find_path(GTEST_INCLUDE_PATH gtest/gtest.h)

@@ -6,13 +6,15 @@
 * [] hash_map
 * [] lru
 * [x] semaphore
+* [] consistent_hashing
 
 ## Algorithms
 * search
   - [] binary_search
 * sort
-  - [] heap_sort
-  - [] quick_sort
-  - [] merge_sort
+  - [x] heap_sort
+  - [x] quick_sort
+  - [x] merge_sort
+  - [x] shell_sort
 * cstring
   - [x] memmove
