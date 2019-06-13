@@ -16,5 +16,8 @@
   - [x] quick_sort
   - [x] merge_sort
   - [x] shell_sort
+  - [] radix_sort
+* select
+  - [x] quick_select
 * cstring
   - [x] memmove
