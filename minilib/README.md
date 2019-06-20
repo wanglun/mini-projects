@@ -4,7 +4,7 @@
 * [x] blocking_queue
 * [x] priority_queue
 * [] hash_map
-* [] lru
+* [x] lru
 * [x] semaphore
 * [] consistent_hashing
 * [] object_pool
